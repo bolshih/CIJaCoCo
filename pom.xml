@@ -21,6 +21,11 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs</artifactId>
+            <version>4.7.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,6 +75,20 @@
                         </rules>
                     </configuration>
                 </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.7.0.0</version>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
